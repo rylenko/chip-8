@@ -1,0 +1,26 @@
+[package]
+name = "chip-8"
+version = "0.1.0"
+keywords = ["chip-8", "emulator"]
+description = "Implementation of the Chip-8 emulator."
+license-file = "LICENSE"
+readme = "README.md"
+edition = "2018"
+
+[features]
+tracing = [
+	"dep:tracing",
+	"dep:tracing-appender",
+	"dep:tracing-bunyan-formatter",
+	"dep:tracing-subscriber",
+]
+
+[dependencies]
+anyhow = "1.0.69"
+minifb = "0.19"
+rand = "0.8"
+tracing = { version = "0.1.37", optional = true }
+tracing-appender = { version = "0.2.2", optional = true }
+tracing-bunyan-formatter = { version = "0.3.7", optional = true }
+tracing-subscriber = { version = "0.3.17", features = ["env-filter"], optional = true }
+
